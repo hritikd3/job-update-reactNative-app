@@ -1,45 +1,74 @@
+import { Stack, useRouter, useSearchParams } from "expo-router";
+import { useCallback, useState } from "react";
 import {
-  Text,
   View,
+  Text,
   SafeAreaView,
   ScrollView,
   ActivityIndicator,
   RefreshControl,
 } from "react-native";
-import { COLORS, icons, image, SIZES } from "../../constants";
-import {
-  Stack,
-  Tabs,
-  useRoute,
-  useRouter,
-  useSea,
-  useSearchParams,
-} from "expo-router";
-import { useCallback, useS, useState } from "react";
+
 import {
   Company,
   JobAbout,
   JobFooter,
   JobTabs,
   ScreenHeaderBtn,
-  Specifies,
+  Specifics,
 } from "../../components";
-
+import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
-function JobDetails() {
+const tabs = ["About", "Qualifications", "Responsibilities"];
+
+const JobDetails = () => {
   const params = useSearchParams();
   const router = useRouter();
-const {data,isLoading, error , refetch}= useFetch('job-details',{
-    job_id:params.id 
-})
-const [refreshing, setrefreshing] = useState(false);
-const [activeTab, setActiveTab] = useState(false);
 
-const onRefresh= ()=>{};
+  const { data, isLoading, error, refetch } = useFetch("job-details", {
+    job_id: params.id,
+  });
+
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, []);
+
+  const displayTabContent = () => {
+    switch (activeTab) {
+      case "Qualifications":
+        return (
+          <Specifics
+            title="Qualifications"
+            points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+          />
+        );
+
+      case "About":
+        return (
+          <JobAbout info={data[0].job_description ?? "No data provided"} />
+        );
+
+      case "Responsibilities":
+        return (
+          <Specifics
+            title="Responsibilities"
+            points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
+          />
+        );
+
+      default:
+        return null;
+    }
+  };
 
   return (
-    <SafeAreaView style={{ flex: 3, backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
@@ -58,6 +87,7 @@ const onRefresh= ()=>{};
           headerTitle: "",
         }}
       />
+
       <>
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -66,7 +96,7 @@ const onRefresh= ()=>{};
           }
         >
           {isLoading ? (
-            <ActivityIndicator size="large" color="#00ff00" />
+            <ActivityIndicator size="large" color={COLORS.primary} />
           ) : error ? (
             <Text>Something went wrong</Text>
           ) : data.length === 0 ? (
@@ -81,16 +111,25 @@ const onRefresh= ()=>{};
               />
 
               <JobTabs
-                tabs={Tabs}
+                tabs={tabs}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
+
+              {displayTabContent()}
             </View>
           )}
         </ScrollView>
+
+        <JobFooter
+          url={
+            data[0]?.job_google_link ??
+            "https://careers.google.com/jobs/results/"
+          }
+        />
       </>
     </SafeAreaView>
-  ); 
-}
+  );
+};
 
 export default JobDetails;

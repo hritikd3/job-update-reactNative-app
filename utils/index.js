@@ -1,4 +1,4 @@
-// this code basically checks for the ImageURL that is=t exists or not 
+// this code basically checks for the ImageURL that is exists or not 
 
 export const checkImageURL = (url) => {
   if (!url) return false;
