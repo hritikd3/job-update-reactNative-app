@@ -99,7 +99,7 @@ const JobDetails = () => {
           {isLoading ? (
             <ActivityIndicator size="large" color={COLORS.primary} />
           ) : error ? (
-            <Text>Something went wrong</Text>
+            <Text>Problem in Fetching from API</Text>
           ) : data.length === 0 ? (
             <Text>No data available</Text>
           ) : (
@@ -125,7 +125,7 @@ const JobDetails = () => {
         <JobFooter
           url={
             data[0]?.job_google_link ??
-            "https://careers.google.com/jobs/results/"
+            "https://careers.google.com/jobs/results/" 
           }
         />
       </>

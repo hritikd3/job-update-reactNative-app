@@ -40,7 +40,7 @@ const Popularjobs = () => {
         {isLoading ? (
           <ActivityIndicator size='large' color={COLORS.primary} />
         ) : error ? (
-          <Text>Something went wrong</Text>
+          <Text>Problem in Fetching from API atm</Text>
         ) : (
           <FlatList
             data={data}
