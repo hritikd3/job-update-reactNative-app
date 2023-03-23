@@ -1,3 +1,4 @@
+//This file [id].js is for dynam,ic routing 
 import { Stack, useRouter, useSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import {
