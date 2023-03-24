@@ -19,7 +19,7 @@ With its simple and easy-to-use interface, JobPilot is the perfect tool to help 
 </tr>
 </table>
 
-There are 2 different sections in the app as follows -
+There are 3 different sections in the app as follows -
 
 1. <b>Full-Time Job Section</b> - This section display the details of the Job Description for Fulltime Basis. All the section contain About, Qualification and Responsibilities component which have proper JD for the specific role. 
 
@@ -48,26 +48,33 @@ The home page of the application contains -
 
 ## UI Of The Web Application
 
-### 1. Home Page
+### 1. Dashboard
 <pre>
- 
+ ![image](/main.png)
 </pre>
 
 
-### 2. Employee Details Page
+### 2. Category Section
 <pre>
-
+![image](categorySection.png)
 </pre>
 
-### 3. Notes Page
+### 3. Job Description section
 <pre>
+![image](/jobDesc.png)
+</pre>
 
+
+### 3. Job Description section
+<pre>
+https://user-images.githubusercontent.com/86347286/227484198-0e89edf7-6a8a-4e59-83a6-a2659e403f96.mp4
 </pre>
 
 ## Future Prospects
 
-- Add a Login-Logout system in the application 
-- Add a Meeting Section to update about the upcoming or incomplete meetings in the workplace
+- Make the API's more Scalable. 
+- Show more job opening from overall job paltform.
+- Categories each job according to user specific  
 
 ## Run Locally
 
