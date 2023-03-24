@@ -1,10 +1,12 @@
 <h1 align="center">
 <h1 align="center">
   🚀 JobPilot 🚀 - A cross platform Native Job Portal App 
-</h1>
-
+<br>
+<br />
+  
 ![image](./screenshots/ss1.jpg)
-
+</h1>
+  
 ## Overview of the App
 
 <table>
@@ -50,24 +52,27 @@ The home page of the application contains -
 
 ### 1. Dashboard
 <pre>
- ![ScreenShot](/screenshots/main.png)
+<img src="/screenshots/main.png" >
 </pre>
 
 
 ### 2. Category Section
 <pre>
- ![ScreenShot](/screenshots/categorySection.png)
+<img src="/screenshots/categorySection.png" >
 </pre>
 
 ### 3. Job Description section
 <pre>
- ![ScreenShot](/screenshots/jobDesc.png)
+ <img src="/screenshots/jobDesc.png" >
 </pre>
 
 
 ### 3. Job Description section
 <pre>
-https://user-images.githubusercontent.com/86347286/227484198-0e89edf7-6a8a-4e59-83a6-a2659e403f96.mp4
+
+https://user-images.githubusercontent.com/86347286/227541757-5b5e97f8-ee06-4f82-812f-bb7f1143368c.mp4
+
+
 </pre>
 
 ## Future Prospects
