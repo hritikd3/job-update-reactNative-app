@@ -67,7 +67,7 @@ The home page of the application contains -
 </pre>
 
 
-### 3. Job Description section
+### 3. Video of the app
 <pre>
 
 https://user-images.githubusercontent.com/86347286/227541757-5b5e97f8-ee06-4f82-812f-bb7f1143368c.mp4
